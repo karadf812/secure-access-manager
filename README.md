@@ -1,33 +1,63 @@
-# Secure Access Manager (Mini IAM)
+# Secure Access Manager (RBAC Simulation)
 
-A simple identity and access management simulation demonstrating authentication and role-based permissions.
+## Problem
 
-## Overview
+Infrastructure environments require controlled access to prevent:
 
-This project simulates:
+- unauthorized actions
+- configuration drift
+- operational risk
 
-- User authentication
+Unrestricted permissions increase the likelihood of outages and security incidents.
+
+## Purpose
+
+This project simulates a simplified role-based access control (RBAC) model.
+
+It demonstrates how:
+
+- user roles
+- permission boundaries
+- action constraints
+
+can limit operational risk.
+
+## Design Goals
+
+- Enforce role-based permissions
+- Separate capabilities by function
+- Simulate controlled access
+
+## What It Simulates
+
+- Authentication logic
 - Role assignment
-- Permission control
+- Permission validation
 
-## Roles
+## Engineering Considerations
 
-- Admin → read, write, delete
-- Engineer → read, write
-- Auditor → read only
+This model reflects real-world tradeoffs:
+
+| Choice | Benefit | Tradeoff |
+|-------|--------|----------|
+| Role-based model | Simplicity | Less granularity |
+| Static permissions | Predictability | No dynamic policy |
+| Local validation | Independence | No central identity service |
+
+## Limitations
+
+- No identity federation
+- No audit logging
+- No policy versioning
 
 ## Why This Matters
 
-Enterprise systems require strict access controls to protect infrastructure and sensitive operations.
+Access control is a foundational layer of infrastructure security.
 
-This project demonstrates how role-based access models help enforce operational security.
+RBAC helps:
 
-## Example Output
+- prevent unauthorized changes
+- enforce operational discipline
+- reduce accidental impact
 
-Authenticated as: engineer  
-Can write? True  
-Can delete? False  
-
-## Tech Stack
-
-- Python
+This project demonstrates how permission boundaries support system integrity.
